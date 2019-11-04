@@ -1,0 +1,8 @@
+.python-version
+__pycache__
+deactivate
+include
+lib
+FX.db
+NewsArticles.db
+bin
