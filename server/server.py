@@ -21,13 +21,21 @@ def initFunc():
     
     
     # なければキーをDBに格納させる
+    # SHAの暗号化
     pass
 
 @app.route('/streaming')
 def fxStreaming():
-    # oandapyからstreamingを受けてチャートを表示する
+    # oandapyからストリーミングデータを取得
+    # フロントにチャートデータを送信，DBへ記録
     pass
 
+
+@app.route('/news')
+def getNewsRSS():
+    # RSSの取得(10分ごと)
+    
+    pass
 
 if __name__ == '__main__':
     # app.debug = True
