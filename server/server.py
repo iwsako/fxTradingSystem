@@ -17,13 +17,22 @@ app = Flask(__name__)
 # News記事はRSSリーダーを使用して格納
 @app.route('/')
 def initFunc():
-    createDB()
+    # キーが登録されているかどうかをチェック
+    
+    
+    # なければキーをDBに格納させる
+    pass
 
+@app.route('/streaming')
+def fxStreaming():
+    # oandapyからstreamingを受けてチャートを表示する
+    pass
 
 
 if __name__ == '__main__':
     # app.debug = True
     app.run(debug=True)
+    createDB()
     print("server is running")
     # host = 'localhost'
     # port = 33553

@@ -14,5 +14,5 @@ def getNewsArticleFromRSS():
 
 
 # for test
-if __name__ == "__main()__":
-    getNewsArticleFromRSS()
+# if __name__ == "__main()__":
+#     getNewsArticleFromRSS()
