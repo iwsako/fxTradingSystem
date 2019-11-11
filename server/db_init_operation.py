@@ -38,7 +38,7 @@ def createTABLEforFX(dbname, cur):
 
 def createTABLEforNA(dbname, cur):
     cur.execute(
-        'CREATE TABLE IF NOT EXISTS news(title STRING, pub STRING, body STRING)'
+        'CREATE TABLE IF NOT EXISTS news(title STRING, pub STRING, body STRING, link STRING)'
     )
     # cur.execute('INSERT INTO news(title, date, body) values("aaa", "bbb", "ccc")')
 
