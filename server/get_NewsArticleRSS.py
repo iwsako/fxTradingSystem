@@ -38,25 +38,24 @@ def getBodyDataFromBS(url):
     soup = BeautifulSoup(res.text, "html.parser")
     # サマリーだけ取得する
     body = soup.find('p', {"class": "tpcNews_summary"}).get_text()
-
     return body
 
 
 # rssの日付をパース
 def parseRssDate(rssPubDate):
-    pubdate = datetime.strptime(rssPubDate, '')
+    pubdate_parse = datetime.strptime(rssPubDate, '%a, %d %b %Y %H:%M:%S %z')
+    pubdate = pubdate_parse.strftime('%Y/%m/%d %H:%M:%S')
     return pubdate
-
 
 
 # DBに保管されてるデータのチェック用
 def checkNewsDB():
     conn = sqlite3.connect('NewsArticles.db')
     cur = conn.cursor()
-
     df = pd.read_sql('select * from news', conn)
     print(df["body"])
-
+    print(df["pub"])
+    print(df["link"])
     cur.close()
     conn.close()
 

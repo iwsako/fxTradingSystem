@@ -6,7 +6,7 @@ import json
 from gevent import pywsgi
 from geventwebsocket.handler import WebSocketHandler
 import time
-from db_operation import createDB
+# from db_operation import createDB
 
 
 app = Flask(__name__)

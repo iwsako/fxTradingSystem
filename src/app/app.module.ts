@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TradingviewComponent } from './tradingview/tradingview.component';
+import { PageNotFoundComponent } from './error/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradingviewComponent
+    TradingviewComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
