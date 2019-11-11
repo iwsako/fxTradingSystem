@@ -27,7 +27,7 @@ def createTABLEforFX(dbname, cur):
     pair_list = ["USDJPY", "GBPJPY"]
     for pair in pair_list:
         cur.execute(
-            'CREATE TABLE IF NOT EXISTS '+ pair +'(date INTEGER, high FLOAT, low FLOAT, open FLOAT, close FLOAT)'
+            'CREATE TABLE IF NOT EXISTS {} (date INTEGER, high FLOAT, low FLOAT, open FLOAT, close FLOAT)'.format(pair)
         )
 
     # 暗号化したapiキーなどを保存するテーブル
@@ -38,8 +38,10 @@ def createTABLEforFX(dbname, cur):
 
 def createTABLEforNA(dbname, cur):
     cur.execute(
-        'CREATE TABLE IF NOT EXISTS news(title STRING, date STRING, body STRING, pub STRING)'
+        'CREATE TABLE IF NOT EXISTS news(title STRING, pub STRING, body STRING)'
     )
     # cur.execute('INSERT INTO news(title, date, body) values("aaa", "bbb", "ccc")')
 
-
+## test
+if __name__ == '__main__':
+    createDB()
