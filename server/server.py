@@ -6,8 +6,8 @@ import json
 from gevent import pywsgi
 from geventwebsocket.handler import WebSocketHandler
 import time
-# from db_operation import createDB
-
+from module.db_operation import createDB
+from module.get_NewsArticleRSS import getNewsArticleFromRSS
 
 app = Flask(__name__)
 
@@ -34,8 +34,9 @@ def fxStreaming():
 @app.route('/news')
 def getNewsRSS():
     # RSSの取得(10分ごと)
+    getNewsArticleFromRSS()
     
-    pass
+
 
 if __name__ == '__main__':
     # app.debug = True
